@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+
+/* carousel */
+
+.carousel-item {
+    height: 80vh; 
+}
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 80vh; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* card */
+
+.card>img {
+    height: 200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Book Availability */
+#book-list{
+    height:100vh;
+    background-attachment:fixed; 
+    overflow-x:scroll;
 }
 
-.App-link {
-  color: #61dafb;
+#book-list::-webkit-scrollbar {
+    display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#book-list {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+/* update user modal */
+.update-input-field{
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid black;
 }

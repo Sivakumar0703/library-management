@@ -1,0 +1,98 @@
+
+#select-container{
+ position: relative;
+ max-width: 320px;
+ width: 100%;
+ background-color: aquamarine;
+}
+
+#select-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background-color: bisque;
+    
+}
+
+#select-button .check-icon{
+    height:21px;
+    width:21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.list-items{
+    position: relative;
+    margin-top: 12px;
+    border-radius: 5px;
+    padding: 15px;
+    background-color:chartreuse;
+    max-height: 200px;
+    overflow-y: scroll;
+    display: none;
+}
+
+#select-button.open ~ .list-items{
+    display: block;
+}
+
+#select-button.open  .check-icon{
+    transform: rotate(-180deg);
+}
+
+.list-items .item{
+    list-style: none; 
+    display: flex;
+    align-items: center;
+    height:40px;
+    padding: 0 15px;
+    cursor: pointer; 
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.list-items .item:hover{
+    background-color: cornsilk;
+}
+
+.item .checkbox{
+    height:15px;
+    width:15px;
+    border-radius: 3px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid red;
+    transition: all 0.3 ease-in-out;
+}
+
+.item .item-text{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* .checkbox .check-icon {
+    background-color: #4070f4;
+    border-color:#4070f4 ;
+} */
+
+.checkbox .check-icon{
+    transform: scale(0);
+    transition: all 0.3 ease-in-out;
+    /* color:#fff; */
+}
+
+.item.checked .check-icon{
+    transform: scale(1);
+}
+
+#searchAndAdd:focus{
+    outline: none;
+}
