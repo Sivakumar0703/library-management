@@ -80,7 +80,7 @@ const Login = () => {
   <button type="submit" className="btn btn-primary" style={{textAlign:"center"}}>Submit</button>
   </div>
 </form>
-        </div>
+    </div>
     </div>
   )
 }

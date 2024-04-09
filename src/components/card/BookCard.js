@@ -14,6 +14,11 @@ const BookCard = ({book}) => {
 
   async function deleteBook(){
     try {
+      console.log(book.takenBy.length);
+      if(book.takenBy.length){
+        toast.error("not able to delete".toUpperCase());
+        return alert(`try deleting after all the ${book.bookName} copies are returned`);
+      }
       const delBook = await axios.delete(`${url}/book/delete/${book._id}`);
       setTriggerBooksList(prev => !prev);
       toast.success(delBook.data.message.toUpperCase());

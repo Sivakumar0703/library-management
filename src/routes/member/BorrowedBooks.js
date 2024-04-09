@@ -74,11 +74,12 @@ const BorrowedBooks = () => {
           </table>
 
           <br/>
+          
+          <h3>Books Borrowed</h3>
+          <span>count :</span> &nbsp; <span>{user.borrowedBooks.length}</span> <br/>
           <div>
             <GetBookModal reader={user} /> 
           </div>
-          <h3>Books Borrowed</h3>
-          <span>count :</span> &nbsp; <span>{user.borrowedBooks.length}</span>
           {/* borrowed book table */}
           
           {

@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from "../../assets/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
@@ -16,6 +15,9 @@ const Navbar = () => {
     sessionStorage.clear();
   }
 
+
+ 
+
   return (
     <div>
 <nav className="navbar navbar-expand-lg bg-light">
@@ -30,7 +32,7 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav ms-auto">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/home">Home</a>
+          <a className="nav-link" aria-current="page" href="/home">Home</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/home/book_availability">Books</a>
