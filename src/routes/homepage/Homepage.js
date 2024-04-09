@@ -19,8 +19,9 @@ const Homepage = () => {
     "penalty",
     "library_members"
   ];
-  const access = [true,false,false];
   const user = JSON.parse(sessionStorage.getItem("user"));
+
+  
 
 
   return (
@@ -30,7 +31,7 @@ const Homepage = () => {
       <div id="cards-container">
          {
             cardImages.map((img,index) => {
-              return <Card image={img} title={cardTitles[index]} key={img} access={access[index]} endpoint={endpoints[index]} />
+              return <Card image={img} title={cardTitles[index]} key={img} endpoint={endpoints[index]} />
             })
          }
       </div>

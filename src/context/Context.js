@@ -13,7 +13,8 @@ const Context = ({children}) => {
     const[selectedBooksId , setSelectedBooksId] = useState([]);
     const [reset,setReset] = useState(false); // reset after books are taken
     const[trigger,setTrigger] = useState(false);
-    const url = "http://localhost:5000/api";
+    // const url = "http://localhost:5000/api";
+    const url = "https://library-management-backend-pv6a.onrender.com/api";
 
     async function getMembers(){
       try {

@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import "../../App.css";
 
-const Card = ({image,title,endpoint,access}) => {
+const Card = ({image,title,endpoint}) => {
     const navigate = useNavigate();
+    const isAdmin = JSON.parse(sessionStorage.getItem("user"))?.isAdmin;
 
     function handleClick(){
-        if(!access){
+        if(!isAdmin){
             return alert("access denied for readers".toUpperCase());
         }
         navigate(`/home/${endpoint}`)
