@@ -50,7 +50,7 @@ const Penalty = () => {
 
     // get book name
     function getBookName(bookId){
-        const name = books.filter(book => book._id === bookId);
+        const name = books && books.filter(book => book._id === bookId);
         return name[0].bookName
     }
 
@@ -61,7 +61,6 @@ const Penalty = () => {
         const time = d2.diff(d1)
         const days = Math.ceil(time / (1000 * 60 * 60 * 24)) // converting milliSecond to days
         if (days > 15) {
-            // setTotal((days - 15) * 5)
             return (days - 15) * 5
         }
         return "Nil"
@@ -165,7 +164,6 @@ const Penalty = () => {
                         ))
 
                     }
-                    {/*  */}
                      
                  </tbody>
             </table>

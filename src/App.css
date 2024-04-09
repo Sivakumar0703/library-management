@@ -2,45 +2,139 @@
 /* carousel */
 
 .carousel-item {
-    height: 80vh; 
+  height: 80vh; 
 }
 .carousel-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 80vh; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 80vh; 
 }
 
 /* card */
 
 .card>img {
-    height: 200px;
+  height: 200px;
 }
 
 .card {
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* Book Availability */
 #book-list{
-    height:100vh;
-    background-attachment:fixed; 
-    overflow-x:scroll;
+  height:100vh;
+  background-attachment:fixed; 
+  overflow-x:scroll;
 }
 
 #book-list::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 #book-list {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 /* update user modal */
 .update-input-field{
-    border-radius: 5px;
-    box-shadow: none;
-    border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid black;
 }
+
+/* feedback page */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@1,600&display=swap');
+
+.feedback-ip{
+  margin-bottom: 5px;
+  padding:5px;
+  width:100%;
+  border-radius: 8px;
+}
+
+.feedback-label{
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#feeback-container{
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.feedback-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-form{
+  border-radius: 8px;
+  width:30%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px;
+}
+
+.pacifico-regular {
+ font-family: "Pacifico", cursive;
+ font-weight: 400;
+ font-style: normal;
+ font-size: 30px;
+}
+
+/* reset password page stylings */
+.reset-password-container{
+  height:100vh;
+  background-color: #152238;
+  color:#009688;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-img-container{
+  height:40%;
+  width:40%;
+  margin: 0 auto;
+}
+
+.reset-img-container img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+
+.reset-password-form div{
+  text-align: center;
+ }
+
+ /* styling for Error Page */
+
+#error-page{
+  height:100vh;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background-image: url("./assets/error-page.jpg");
+  background-size: cover;
+}
+
+ .error-icon{
+  color:black;
+  font-size:50px ;
+ }
+
+ #error-container{
+  box-shadow: rgba(237, 229, 229, 0.913) 0px 5px 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+ }
+
+

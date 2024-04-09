@@ -1,11 +1,21 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import "./account.css";
 import Login from "./Login";
 import Signup from "./Signup";
 import title from "../../assets/heading.png";
+import { useNavigate } from 'react-router-dom';
 
 const Account = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    if(user){
+      navigate('/home');
+    }
+  },[])
   return (
     <div className="my-home-page">
       <header className="d-flex justify-content-center w-90 chat-title">

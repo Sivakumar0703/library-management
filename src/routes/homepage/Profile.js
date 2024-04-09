@@ -24,7 +24,7 @@ const Profile = () => {
     }
 
     useEffect(()=>{
-        getUserData()
+      getUserData()
     },[])
   return (
     <div id="profile-container">

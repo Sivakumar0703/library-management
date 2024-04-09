@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
 
   const navigate = useNavigate();
+  const isAdmin = JSON.parse(sessionStorage.getItem("user"))?.isAdmin;
+  const user = JSON.parse(sessionStorage.getItem("user"));
+   
 
   function logout(){
     navigate('/');
@@ -17,7 +20,7 @@ const Navbar = () => {
     <div>
 <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
-  <a className="navbar-brand" href="#">
+  <a className="navbar-brand" href="/home">
       <img src={logo} alt="Logo" width="30" height="30" className="d-inline-block align-text-top" style={{borderRadius:"50%"}} /> &nbsp;
       Central Library
     </a>
@@ -32,15 +35,21 @@ const Navbar = () => {
         <li className="nav-item">
           <a className="nav-link" href="/home/book_availability">Books</a>
         </li>
-        <li className="nav-item">
+        {
+          isAdmin ? <li className="nav-item">
           <a className="nav-link" href="/home/library_members">Members</a>
         </li>
+        : ""
+        }
         <li className="nav-item">
-          <a className="nav-link" href="#">Contact</a>
+          <a className="nav-link" href="/contact">Contact</a>
         </li>
-        <li className="nav-item">
+        {
+          user ? <li className="nav-item">
           <a className='nav-link' href='#' onClick={logout}> <FontAwesomeIcon icon={faRightFromBracket} /> </a>
         </li>
+        : ""
+        }
       </ul>
     </div>
   </div>

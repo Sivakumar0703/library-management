@@ -6,9 +6,11 @@ import { myContext } from "../../context/Context";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
 const BookCard = ({book}) => {
 
   const{url,setTriggerBooksList} = useContext(myContext);
+  const isAdmin = JSON.parse(sessionStorage.getItem("user"))?.isAdmin;
 
   async function deleteBook(){
     try {
@@ -22,9 +24,10 @@ const BookCard = ({book}) => {
     }
   }
 
+
   return (
     <div className="card m-3" style={{ width: "18rem",height:"350px" }} >
-    <img src={book.image} className="card-img-top" alt="nam" />
+    <img src={book.image} className="card-img-top" alt="book-cover" />
     <div className="card-body">
     <p className="card-text" style={{textAlign:"center",margin:"5px 0",wordBreak:"break-word"}}> <b>{book.bookName}</b> </p>
     <p className="card-text" style={{textAlign:"left",margin:"5px",wordBreak:"break-word"}}> Author : {book.authorName} </p>
@@ -42,9 +45,13 @@ const BookCard = ({book}) => {
       </>
     }
     </div>
-    <div>
-    <button className="btn" onClick={deleteBook}><FontAwesomeIcon icon={faTrash} style={{color: "#ff0000"}} /></button>
-    </div>
+    {
+      isAdmin ? <div>
+      <button className="btn" onClick={deleteBook}><FontAwesomeIcon icon={faTrash} style={{color: "#ff0000"}} /></button>
+      </div>
+      : ""
+    }
+    
     </div>
 
     </div>

@@ -1,6 +1,6 @@
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import image from "../../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 import { myContext } from '../../context/Context';
@@ -31,8 +31,7 @@ const Login = () => {
        } catch (error) {
         error.response ?
         toast.error(error.response.data.message.toUpperCase()) :
-        toast.error(error.message)
-        
+        toast.error(error.message)     
        }
     }
 
@@ -49,6 +48,7 @@ const Login = () => {
       navigate('/login/forgot_password');
     }
 
+  
 
   return (
     <div className='container login-container row'>

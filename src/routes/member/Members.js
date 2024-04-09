@@ -7,17 +7,14 @@ const Members = () => {
 
     const[search,setSearch] = useState("");
 
-    function searchForMember(){
 
-    }
 
   return (
     <div>
         <Navbar/>
         {/* search */}
         <div id="search-container">
-            <input placeholder="search by name/mobile" className="p-2 m-2" value={search} onChange={e => setSearch(e.target.value)} autoComplete="off" />
-            <button className="btn btn-primary m-2" onClick={searchForMember}>search</button>
+          <input placeholder="🔍 name/mobile/book" className="p-2 m-2" value={search} onChange={e => setSearch(e.target.value)} autoComplete="off" style={{width:"40%",borderRadius:"5px",padding:"5px"}} />
         </div>
 
         <MembersTable search={search} />

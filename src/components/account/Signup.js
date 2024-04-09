@@ -60,6 +60,7 @@ const Signup = () => {
       }
    }
 
+
   return (
     <div id="signup-container" className="row">
         <div id="signup-form" className="col-md-6 col-12" >

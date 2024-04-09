@@ -75,7 +75,6 @@ const BorrowedBooks = () => {
 
           <br/>
           <div>
-            {/* <button className='btn btn-success' onClick={getBook}>ADD BOOK</button>  */}
             <GetBookModal reader={user} /> 
           </div>
           <h3>Books Borrowed</h3>

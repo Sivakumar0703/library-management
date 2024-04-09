@@ -6,20 +6,23 @@ import Profile from './Profile';
 import Facts from './Facts';
 import Footer from './Footer';
 
+
 const Homepage = () => {
-  const cardImages = ["card-books.jpg","card-borrowed_books.jpg","card-clock.jpg","card-membership.jpeg"];
+  const cardImages = ["card-books.jpg","card-clock.jpg","card-membership.jpeg"];
   const cardTitles = [
     "CHECK BOOKS AVAILABILITY",
-    "LIBRARY STATUS",
     "PENALTY",
     "LIBRARY MEMBERS"
   ];
   const endpoints = [
     "book_availability",
-    "status",
     "penalty",
     "library_members"
   ];
+  const access = [true,false,false];
+  const user = JSON.parse(sessionStorage.getItem("user"));
+
+
   return (
     <div>
       <Navbar/>
@@ -27,12 +30,12 @@ const Homepage = () => {
       <div id="cards-container">
          {
             cardImages.map((img,index) => {
-              return <Card image={img} title={cardTitles[index]} key={img} endpoint={endpoints[index]} />
+              return <Card image={img} title={cardTitles[index]} key={img} access={access[index]} endpoint={endpoints[index]} />
             })
          }
       </div>
       <hr/>
-      <Profile/>
+      {user ? <Profile/> : ""}
       <hr/>
       <Facts/>
       <br/>
