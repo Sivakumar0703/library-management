@@ -1,6 +1,6 @@
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import image from "../../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 import { myContext } from '../../context/Context';
@@ -12,16 +12,18 @@ const Login = () => {
     const [loginCredentials,setLoginCredentials] = useState({email:"",password:""});
     const [toggle,setToogle] = useState(false);
     const passwordField = document.getElementById("loginPassword");
+    const [trigger,setTrigger] = useState(false);
     const navigate = useNavigate();
     const {url} = useContext(myContext);
 
     function handleChange(e){
-        setLoginCredentials({...loginCredentials ,[e.target.name]:e.target.value})
+      setLoginCredentials({...loginCredentials ,[e.target.name]:e.target.value})
     }
 
     async function login(e){
-        e.preventDefault();
+        e?.preventDefault();
        try {
+        console.log('login',loginCredentials)
         const data = loginCredentials;
         const user = url && await axios.post(`${url}/user/login` , data);
         sessionStorage.setItem("user",JSON.stringify(user.data.user));
@@ -47,6 +49,21 @@ const Login = () => {
     function forgotPassword(){
       navigate('/login/forgot_password');
     }
+
+     function quickLogin(data){
+      setLoginCredentials(data);
+      setTrigger(true);
+    }
+
+    useEffect(()=>{
+      if(trigger){
+        login()
+        setTrigger(false);
+      }
+    },[trigger])
+
+
+  
 
   
 
@@ -79,6 +96,13 @@ const Login = () => {
   <div className='text-center'>
   <button type="submit" className="btn btn-primary" style={{textAlign:"center"}}>Submit</button>
   </div>
+
+   <div id="guest-login" style={{marginTop:"10px",textAlign:"center"}}>
+      <button className='btn btn-warning w-100 mb-1' onClick={() => quickLogin({email:"siva@xyz.com",
+      password:"sivakumar"})}> Admin </button> <br/>
+      <button className='btn btn-info w-100' onClick={() => quickLogin({email:"guest@guest.com",
+      password:"sivakumar"})}> Guest </button>
+   </div>
 </form>
     </div>
     </div>
