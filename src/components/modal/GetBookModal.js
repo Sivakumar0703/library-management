@@ -8,6 +8,7 @@ const GetBookModal = ({reader}) => {
 
   const{books,loading,getBooks,setGetBooks,url,setReset,selectedBooksId,setTrigger,setSelectedBooksId} = useContext(myContext);
   const closeButton = useRef();
+ 
 
   // async function borrowBooks(){
   //   try {
@@ -60,9 +61,11 @@ const GetBookModal = ({reader}) => {
   return (
     <div>
       {/* Button trigger modal */}
-<button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#getBookModal">
-  ADD BOOK
-</button>
+      <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#getBookModal">
+        ADD BOOK
+      </button>
+
+
 
 {/* Modal */}
 <div className="modal fade" id="getBookModal" tabIndex="-1" aria-labelledby="getBookModalLabel" aria-hidden="true">

@@ -15,6 +15,7 @@ const BookAvailability = () => {
   const[search , setSearch] = useState("");
   const[books , setBooks] = useState([]);
   const {url , triggerBooksList} = useContext(myContext);
+  const user = JSON.parse(sessionStorage.getItem("user"));
 
   async function getAllBooks(){
     try {
@@ -45,7 +46,10 @@ const BookAvailability = () => {
         onChange={e => setSearch(e.target.value)}
         style={{padding:"10px",borderRadius:"8px"}}
         /> &nbsp;
-        <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#addBook">ADD BOOK</button>
+        {
+          user?.isAdmin && 
+          <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#addBook">ADD BOOK</button>
+        }
       </div>
 
       {/* modal */}
