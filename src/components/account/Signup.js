@@ -85,13 +85,13 @@ const Signup = () => {
 
   <div>
     <label htmlFor="password" className="form-label" >PASSWORD</label>
-    <input type="text" className="form-control input-field" id="password"  value={values.password} onChange={handleChange} onBlur={handleBlur}  autoComplete='off' />
+    <input type="password" className="form-control input-field" id="password"  value={values.password} onChange={handleChange} onBlur={handleBlur}  autoComplete='off' />
     {touched.password && errors.password ? (<p className='signup-error-msg' style={{color:"red"}}>{errors.password}</p>) : (<p className='signup-error-msg hidden-msg'>error</p>)}
   </div>
 
   <div>
     <label htmlFor="confirmPassword" className="form-label" >CONFIRM PASSWORD</label>
-    <input type="text" className="form-control input-field" id="confirmPassword"  value={values.confirmPassword} onBlur={handleBlur}  onChange={handleChange} autoComplete='off' />
+    <input type="password" className="form-control input-field" id="confirmPassword"  value={values.confirmPassword} onBlur={handleBlur}  onChange={handleChange} autoComplete='off' />
     {touched.confirmPassword && errors.confirmPassword ? (<p className='signup-error-msg' style={{color:"red"}}>{errors.confirmPassword}</p>) : (<p className='signup-error-msg hidden-msg'>error</p>)}
   </div>
 
